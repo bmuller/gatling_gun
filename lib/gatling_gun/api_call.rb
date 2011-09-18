@@ -18,6 +18,8 @@ class GatlingGun
       post              = Net::HTTP::Post.new(url.path)
       post.set_form_data(@parameters)
       Response.new(http.start { |session| session.request(post) })
+    rescue => error
+      Response.new("error" => error.message)
     end
   end
 end

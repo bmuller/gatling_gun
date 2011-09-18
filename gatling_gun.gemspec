@@ -1,7 +1,11 @@
 DIR     = File.dirname(__FILE__)
 LIB     = File.join(DIR, *%w[lib gatling_gun.rb])
 VERSION = open(LIB) { |lib|
-  lib.find { |line| line[/^\s*VERSION\s*=\s*(['"])(\d\.\d\.\d)\1/, 2] }
+  lib.each { |line|
+    if v = line[/^\s*VERSION\s*=\s*(['"])(\d\.\d\.\d)\1/, 2]
+      break v
+    end
+  }
 }
 
 SPEC = Gem::Specification.new do |s|
