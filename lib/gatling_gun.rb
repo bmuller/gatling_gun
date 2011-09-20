@@ -8,7 +8,7 @@ require "gatling_gun/api_call"
 require "gatling_gun/response"
 
 class GatlingGun
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
   
   def initialize(api_user, api_key)
     @api_user = api_user

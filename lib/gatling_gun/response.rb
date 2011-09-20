@@ -45,6 +45,10 @@ class GatlingGun
       end
     end
     
+    def empty?
+      @data.empty?
+    end
+    
     #######
     private
     #######
