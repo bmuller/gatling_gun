@@ -8,7 +8,7 @@ require "gatling_gun/api_call"
 require "gatling_gun/response"
 
 class GatlingGun
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
   
   def initialize(api_user, api_key)
     @api_user = api_user
@@ -40,7 +40,7 @@ class GatlingGun
   end
 
   def get_newsletter(newsletter)
-    make_api_call("edit", name: newsletter)
+    make_api_call("get", name: newsletter)
   end
 
   def list_newsletters(newsletter = nil)

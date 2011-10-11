@@ -18,7 +18,9 @@ class GatlingGun
       post              = Net::HTTP::Post.new(url.path)
       post.set_form_data(@parameters)
       Response.new(http.start { |session| session.request(post) })
-    rescue => error
+    rescue Timeout::Error, Errno::EINVAL,        Errno::ECONNRESET,
+           EOFError,       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
+           Net::ProtocolError => error
       Response.new("error" => error.message)
     end
   end
