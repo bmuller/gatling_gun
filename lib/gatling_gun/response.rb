@@ -14,7 +14,7 @@ class GatlingGun
       end
     end
     
-    attr_reader :http_response_code
+    attr_reader :http_response_code, :data
     
     def success?
       @success
