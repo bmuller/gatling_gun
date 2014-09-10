@@ -2,7 +2,8 @@ require 'bundler/gem_tasks'
 require 'rdoc/task'
 require 'rake/testtask'
 
-task :default => [:test_memory]
+# need some tests!
+# task :default => [:test]
 
 desc "Create documentation"
 Rake::RDocTask.new("doc") { |rdoc|

@@ -13,4 +13,5 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_paths = %w[lib]
   s.add_development_dependency('rdoc')
+  s.add_development_dependency('rake')
 end
