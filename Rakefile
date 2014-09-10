@@ -1,6 +1,13 @@
-require "rubygems/package_task"
+require 'bundler/gem_tasks'
+require 'rdoc/task'
+require 'rake/testtask'
 
-load(File.join(File.dirname(__FILE__), "gatling_gun.gemspec"))
-Gem::PackageTask.new(SPEC) do |package|
-  # do nothing:  I just need a gem but this block is required
-end
+task :default => [:test_memory]
+
+desc "Create documentation"
+Rake::RDocTask.new("doc") { |rdoc|
+  rdoc.title = "gatling_gun - A Ruby library wrapping SendGrid's Newsletter API."
+  rdoc.rdoc_dir = 'docs'
+  rdoc.rdoc_files.include('README.markdown')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+}
