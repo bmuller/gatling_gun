@@ -1,7 +1,7 @@
 class GatlingGun
   class Response
     include Enumerable
-    
+
     def initialize(response)
       if response.is_a? Hash
         @success            = false
@@ -13,21 +13,17 @@ class GatlingGun
         @data               = parse(response.body)
       end
     end
-    
+
     attr_reader :http_response_code, :data
-    
-    def success?
-      @success
-    end
-    
+
     def error?
-      not success?
+      not @success
     end
-    
+
     def error_messages
       Array(self[:errors]) + Array(self[:error])
     end
-    
+
     def [](field)
       case @data
       when Hash
@@ -38,26 +34,27 @@ class GatlingGun
         nil
       end
     end
-    
+
     def each(&iterator)
-      if @data.is_a? Enumerable
-        @data.each(&iterator)
-      end
+      return unless @data.is_a? Enumerable
+      @data.each(&iterator)
     end
-    
+
     def empty?
       @data.empty?
     end
-    
+
     #######
+
     private
+
     #######
-    
+
     def parse(body)
       JSON.parse(body)
     rescue JSON::JSONError => error
       @success = false
-      @data    = {"error" => error.message}
+      @data    = { "error" => error.message }
     end
   end
 end

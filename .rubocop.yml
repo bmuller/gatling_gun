@@ -1,0 +1,95 @@
+AndOr:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+AccessorMethodName:
+  Enabled: false
+
+ClassLength:
+  Max: 300
+
+Documentation:
+  Enabled: false
+
+Encoding:
+  Enabled: false
+
+BracesAroundHashParameters:
+  Enabled: false
+
+Blocks:
+  Enabled: false
+
+ClassVars:
+  Enabled: false
+
+CollectionMethods:
+  Enabled: false
+
+CyclomaticComplexity:
+  Max: 16
+
+HandleExceptions:
+  Enabled: false
+
+HashSyntax:
+  Enabled: false
+
+IfUnlessModifier:
+  Enabled: false
+
+LineLength:
+  Max: 183
+
+MethodLength:
+  Max: 40
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+MultilineBlockChain:
+  Enabled: false
+
+NestedTernaryOperator:
+  Enabled: false
+
+Not:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false
+
+ParameterLists:
+  Enabled: false
+
+ParenthesesAroundCondition:
+  Enabled: false
+
+ParenthesesAsGroupedExpression:
+  Enabled: false
+
+RedundantBegin:
+  Enabled: false
+
+RedundantSelf:
+  Enabled: false
+
+RescueException:
+  Enabled: false
+
+RescueModifier:
+  Enabled: false
+
+Semicolon:
+  Enabled: false
+
+SignalException:
+  Enabled: false
+
+SingleLineBlockParams:
+  Enabled: false
+
+WordArray:
+  Enabled: false

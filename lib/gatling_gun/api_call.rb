@@ -1,12 +1,12 @@
 class GatlingGun
   class ApiCall
     BASE_URL = "https://sendgrid.com/api/newsletter"
-    
+
     def initialize(action, parameters)
       @action     = action
       @parameters = parameters
     end
-    
+
     def response
       url               = URI.parse("#{BASE_URL}/#{@action}.json")
       http              = Net::HTTP.new(url.host, url.port)
