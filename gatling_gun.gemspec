@@ -1,16 +1,10 @@
-DIR     = File.dirname(__FILE__)
-LIB     = File.join(DIR, *%w[lib gatling_gun.rb])
-VERSION = open(LIB) { |lib|
-  lib.each { |line|
-    if v = line[/^\s*VERSION\s*=\s*(['"])(\d\.\d\.\d)\1/, 2]
-      break v
-    end
-  }
-}
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'gatling_gun.rb'
 
-SPEC = Gem::Specification.new do |s|
+Gem::Specification.new do |s|
   s.name        = "gatling_gun"
-  s.version     = VERSION
+  s.version     = GatlingGun::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["James Edward Gray II"]
   s.email       = ["james@graysoftinc.com"]
