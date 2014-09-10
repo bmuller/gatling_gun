@@ -38,7 +38,7 @@ following.  First, you need an identity to send from:
 
 ```ruby
 SendGrid.add_identity( "test", name:    "Test User",
-		               email:   "test@subinterest.com",
+                               email:   "test@subinterest.com",
                                address: "513 Cinnamon Dr.",
                                city:    "Edmond",
                                state:   "OK",
